@@ -1,0 +1,14 @@
+{
+	"lock": false,
+	"fmt": {
+		"useTabs": true
+	},
+	"tasks": {
+		"dev": "deno run --watch --allow-read --allow-write=downloads --allow-env --allow-net main.ts"
+	},
+	"imports": {
+		"@std/path": "jsr:@std/path@^0.225.1",
+		"hono": "npm:hono@^4.4.0",
+		"ytdl-core": "npm:ytdl-core@^4.11.5"
+	}
+}
