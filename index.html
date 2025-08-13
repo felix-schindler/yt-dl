@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>YouTube Audio Download</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>YouTube Audio Download</title>
+		<style>
+			:root {
+				color-scheme: light dark;
+				font-family:
+					Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+					source-sans-pro, sans-serif;
+				font-weight: normal;
+			}
 
-	<style>
-		:root {
-			color-scheme: light dark;
-			font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
-			font-weight: normal;
-		}
+			body {
+				margin: 0;
+				padding: 0 1em;
 
-		body {
-			margin: 0;
-			padding: 0 1em;
+				min-height: 100vh;
+				text-align: center;
 
-			min-height: 100vh;
-			text-align: center;
+				display: grid;
+				grid-template-rows: auto 1fr auto;
+			}
 
-			display: grid;
-			grid-template-rows: auto 1fr auto;
-		}
+			main {
+				display: grid;
+				place-items: center;
+			}
 
-		main {
-			display: grid;
-			place-items: center;
-		}
+			form {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5em;
+			}
 
-		form {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			gap: .5em;
-		}
+			input,
+			button {
+				padding: 0.25em 0.5em;
+				font-size: 1rem;
+			}
 
-		input,
-		button {
-			padding: .25em .5em;
-			font-size: 1rem;
-		}
+			button {
+				cursor: pointer;
+			}
 
-		button {
-			cursor: pointer;
-		}
+			footer {
+				padding: 1rem;
+			}
+		</style>
+	</head>
 
-		footer {
-			padding: 1rem;
-		}
-	</style>
-</head>
-
-<body>
-	<header>
-		<h1>YouTube Audio Downloader</h1>
-		<p>Download the audio track of any YouTube Video with ease</p>
-	</header>
-	<main>
-		<form action="/watch" method="get">
-			<input type="text" name="v" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-			<button type="submit">Download</button>
-		</form>
-	</main>
-	<footer>
-		<p>Questioning the legality? <a
-				href="https://www.anwalt.de/rechtstipps/youtube-downloads-sind-sie-legal-und-erlaubt-214034.html">Click here</a>
-		</p>
-	</footer>
-</body>
-
+	<body>
+		<header>
+			<h1>YouTube Audio Downloader</h1>
+			<p>Download the audio track of any YouTube Video with ease</p>
+		</header>
+		<main>
+			<form action="/watch" method="get">
+				<input
+					type="text"
+					name="v"
+					placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+				>
+				<button type="submit">Download</button>
+			</form>
+		</main>
+		<footer>
+			<p>
+				Questioning the legality? <a
+					href="https://www.anwalt.de/rechtstipps/youtube-downloads-sind-sie-legal-und-erlaubt-214034.html"
+				>Click here</a>
+			</p>
+		</footer>
+	</body>
 </html>

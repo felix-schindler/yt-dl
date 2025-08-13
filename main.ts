@@ -1,4 +1,4 @@
-import ytdl from "ytdl-core";
+import ytdl from "@distube/ytdl-core";
 import { join } from "@std/path";
 import { createWriteStream } from "node:fs";
 import { Hono } from "hono";
@@ -42,7 +42,9 @@ app.get("/watch", async (ctx) => {
 			const audioFormats = ytdl.filterFormats(info.formats, "audioonly");
 
 			if (audioFormats.length > 0) {
-				const download = ytdl.downloadFromInfo(info, { format: audioFormats[0] });
+				const download = ytdl.downloadFromInfo(info, {
+					format: audioFormats[0],
+				});
 
 				const writeStream = createWriteStream(filePath);
 				download.pipe(writeStream);
@@ -52,7 +54,7 @@ app.get("/watch", async (ctx) => {
 					writeStream.on("error", reject);
 				});
 			} else {
-				throw Error("No audio formats found")
+				throw Error("No audio formats found");
 			}
 		}
 
@@ -69,7 +71,7 @@ app.get("/watch", async (ctx) => {
 
 app.onError((err, c) => {
 	console.error(err);
-	return c.text(`Unknown error occured: ${String(err)}`, 500)
+	return c.text(`Unknown error occured: ${String(err)}`, 500);
 });
 
 Deno.serve(app.fetch);

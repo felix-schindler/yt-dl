@@ -1,4 +1,6 @@
 {
+	"$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+	"nodeModulesDir": "auto",
 	"lock": false,
 	"fmt": {
 		"useTabs": true
@@ -7,7 +9,9 @@
 		"dev": "deno run --watch --allow-read --allow-write=downloads --allow-env --allow-net main.ts"
 	},
 	"imports": {
-		"@std/path": "jsr:@std/path@^0.225.1",
+		"@distube/ytdl-core": "npm:@distube/ytdl-core@^4.16.12",
+		"@std/path": "jsr:@std/path@^1.1.1",
+		"@types/node": "npm:@types/node@^24.2.1",
 		"hono": "npm:hono@^4.4.0",
 		"ytdl-core": "npm:ytdl-core@^4.11.5"
 	}
